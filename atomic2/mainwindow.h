@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include "board2.h"
+#include "pinball.h"
 #include <QPainter>
 #include <QKeyEvent>
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +23,7 @@ public:
 private:
     Ui::MainWindow *ui;
     Board2 *b1 = nullptr;
+    Pinball *p1 = nullptr;
 };
 
 #endif // MAINWINDOW_H

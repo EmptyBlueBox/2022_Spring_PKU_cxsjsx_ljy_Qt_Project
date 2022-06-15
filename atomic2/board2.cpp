@@ -24,7 +24,7 @@ void Board2::paintEvent(QPaintEvent *)
         getCenter();
         painter.setPen(QPen(Qt::red,20,Qt::SolidLine,Qt::RoundCap));
         painter.setRenderHint(QPainter::Antialiasing);
-        painter.drawLine(QPoint(cter.x(),cter.y()+35),QPoint(cter.x()+32*cos(ang/180*3.1415926),cter.y()+35-32*sin(ang/180*3.1415926)));
+        painter.drawLine(QPoint(cter.x(),cter.y()+37),QPoint(cter.x()+32*cos(ang/180*3.1415926),cter.y()+37-32*sin(ang/180*3.1415926)));
     }
 }
 

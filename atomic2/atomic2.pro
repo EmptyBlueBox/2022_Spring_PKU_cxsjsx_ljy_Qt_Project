@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    board2.cpp
+    board2.cpp \
+    pinball.cpp
 
 HEADERS  += mainwindow.h \
-    board2.h
+    board2.h \
+    pinball.h
 
 FORMS    += mainwindow.ui \
-    board2.ui
+    board2.ui \
+    pinball.ui
