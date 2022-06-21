@@ -76,11 +76,11 @@
      </size>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="timerest">
+   <widget class="QLCDNumber" name="thistime">
     <property name="geometry">
      <rect>
       <x>980</x>
-      <y>110</y>
+      <y>100</y>
       <width>190</width>
       <height>70</height>
      </rect>
@@ -102,14 +102,14 @@
     <property name="geometry">
      <rect>
       <x>1100</x>
-      <y>80</y>
+      <y>75</y>
       <width>70</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="text">
@@ -122,15 +122,15 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>1059</x>
-      <y>180</y>
+      <x>1060</x>
+      <y>165</y>
       <width>111</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="text">
@@ -140,29 +140,133 @@
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QFrame" name="atom_show">
+   <widget class="QTableWidget" name="atomtable">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>210</y>
-      <width>181</width>
-      <height>71</height>
+      <x>980</x>
+      <y>190</y>
+      <width>270</width>
+      <height>240</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::VLine</enum>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
+    <property name="autoScroll">
+     <bool>false</bool>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
+    </property>
+    <property name="rowCount">
+     <number>4</number>
+    </property>
+    <property name="columnCount">
+     <number>6</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QTableWidget" name="itemtable">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>450</y>
+      <width>192</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="rowCount">
+     <number>3</number>
+    </property>
+    <property name="columnCount">
+     <number>3</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <row/>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+    <column/>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1029</x>
-      <y>280</y>
-      <width>141</width>
+      <x>1050</x>
+      <y>425</y>
+      <width>201</width>
       <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>当前拥有原子</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>637</y>
+      <width>131</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>当前拥有道具</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="storeButton">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>560</y>
+      <width>71</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -171,10 +275,7 @@
      </font>
     </property>
     <property name="text">
-     <string>当前最大原子</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <string>商店</string>
     </property>
    </widget>
   </widget>

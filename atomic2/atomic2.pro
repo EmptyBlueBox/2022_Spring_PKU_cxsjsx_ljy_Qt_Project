@@ -15,12 +15,21 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     board2.cpp \
-    pinball.cpp
+    pinball.cpp \
+    bomb.cpp \
+    shop.cpp
 
 HEADERS  += mainwindow.h \
     board2.h \
-    pinball.h
+    pinball.h \
+    bomb.h \
+    shop.h
 
 FORMS    += mainwindow.ui \
     board2.ui \
-    pinball.ui
+    pinball.ui \
+    bomb.ui \
+    shop.ui
+
+RESOURCES += \
+    res.qrc
