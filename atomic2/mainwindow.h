@@ -5,6 +5,7 @@
 #include "board2.h"
 #include "pinball.h"
 #include "bomb.h"
+#include "shop.h"
 #include <QPainter>
 #include <QPixmap>
 #include <QKeyEvent>
@@ -42,6 +43,9 @@ public:
 
 private slots:
     void onTimeout1(void);
+    void shopupdate(void);
+
+    void on_storeButton_clicked();
 
 public:
     QTimer timer1;
@@ -54,12 +58,14 @@ private:
     Pinball *p3[20];//通过碰撞产生的原子
     Pinball *pb[10];//原子爆弹
     Bomb *bb[20];
+    Shop *sh;
     int bombva;//爆弹值
     int bombti;//次数
     int maxatom;//目前所获得的最大原子
-    int atomnum[13];
+    int atomnum[13];//各种原子的数量
+    int mi[10];//表示持有道具的等级或数目
+    int il[10];//表示道具的等级
     int np3;
-
 };
 
 #endif // MAINWINDOW_H

@@ -6,6 +6,8 @@
 #include "ui_pinball.h"
 #include "bomb.h"
 #include "ui_bomb.h"
+#include "shop.h"
+#include "ui_shop.h"
 #include <qdebug.h>
 
 int atomheight[3]={70, 120, 170};
@@ -45,6 +47,9 @@ MainWindow::MainWindow(QWidget *parent) :
     setFocusPolicy(Qt::StrongFocus);
     ui->atomtable->setFocusPolicy(Qt::NoFocus);
     ui->itemtable->setFocusPolicy(Qt::NoFocus);//这三行让炮台随时可以用键盘操作
+    ui->storeButton->setFocusPolicy(Qt::ClickFocus);
+    sh = new Shop(this);
+    sh->hide();
     for(int i=1;i<=3;++i)
     {
         p2[i] = new Pinball(1,this,10,960);
@@ -63,6 +68,7 @@ MainWindow::MainWindow(QWidget *parent) :
         p3[i] = new Pinball(1,this,10,960);
     }//对将来碰撞产生的原子的初始化
     connect(&timer1,SIGNAL(timeout()),this,SLOT(onTimeout1()));
+    connect(sh->ui->end_button,SIGNAL(clicked()),this,SLOT(shopupdate()));
     for(int i=0;i<20;++i)
     {
         bb[i] = new Bomb(this);
@@ -71,6 +77,11 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         pb[i] = new Pinball(1,this,10,960);
     }//对原子爆弹初始化
+    for(int i=1;i<=9;++i)
+    {
+        mi[i] = 0;
+        il[i] = 1;
+    }
     for(int i=0;i<13;++i)
     {
         atomnum[i]=0;
@@ -188,6 +199,7 @@ void MainWindow::pop_prepare()//发射前准备
     bombti++;
     ui->score->display(bombva);
     ui->thistime->display(bombti);//LCD显示
+    ui->storeButton->setEnabled(true);
     int ra = qrand() % 2022;
     switch (bombti%6) {//设计了6种原子轨道模式，不断循环，也有些像黄金矿工的机制
     case 0:
@@ -494,8 +506,20 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         b1->ava = false;//炮台发射过一次，不能再次发射
         atomnum[maxatom]--;
         update_atomtable();
+        ui->storeButton->setDisabled(true);
         update();
     }
+}
+
+void MainWindow::shopupdate()
+{
+    bombva = sh->money;
+    ui->score->display(bombva);
+    for(int i=1;i<=9;++i)
+    {
+        mi[i] = sh->ava[i];
+    }
+    sh->hide();
 }
 
 void MainWindow::colli_detect1()//检查发射出去的原子与轨道上原子的碰撞
@@ -836,4 +860,52 @@ void MainWindow::gameover()//失败的效果展示
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_storeButton_clicked()
+{
+    sh->money = bombva;
+    sh->ui->rest->setText(QString::number(sh->money));
+    for(int i=1;i<=9;++i)
+    {
+        sh->level[i] = il[i];
+        sh->ava[i] = 0;
+    }
+    for(int i=1;i<=9;++i)
+    {
+        if(qrand() % 2)
+        {
+            sh->pri[i] = bombva+1;
+        }
+        else if(qrand() % 3 == 0)
+        {
+            sh->pri[i] = qrand() % 300 + 1;
+        }
+        else
+        {
+            sh->pri[i] = qrand() % 300 + 301;
+        }
+    }
+    sh->pri[10] = qrand() % 600 + 1;
+    sh->ui->pr1->setText(QString::number(sh->pri[1]));
+    sh->ui->pr2->setText(QString::number(sh->pri[2]));
+    sh->ui->pr3->setText(QString::number(sh->pri[3]));
+    sh->ui->pr4->setText(QString::number(sh->pri[4]));
+    sh->ui->pr5->setText(QString::number(sh->pri[5]));
+    sh->ui->pr6->setText(QString::number(sh->pri[6]));
+    sh->ui->pr7->setText(QString::number(sh->pri[7]));
+    sh->ui->pr8->setText(QString::number(sh->pri[8]));
+    sh->ui->pr9->setText(QString::number(sh->pri[9]));
+    sh->ui->prran->setText(QString::number(sh->pri[10]));
+    sh->ui->buy1->setEnabled(true);
+    sh->ui->buy2->setEnabled(true);
+    sh->ui->buy3->setEnabled(true);
+    sh->ui->buy4->setEnabled(true);
+    sh->ui->buy5->setEnabled(true);
+    sh->ui->buy6->setEnabled(true);
+    sh->ui->buy7->setEnabled(true);
+    sh->ui->buy8->setEnabled(true);
+    sh->ui->buy9->setEnabled(true);
+    sh->ui->buyrandom->setEnabled(true);
+    sh->show();
 }
