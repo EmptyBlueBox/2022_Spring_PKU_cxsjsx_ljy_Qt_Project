@@ -1846,8 +1846,49 @@ void MainWindow::on___button_2_clicked()
 
 void MainWindow::on___button_3_clicked()
 {
+    int tmp1=qrand()%2;
+    if(tmp1)
+    {
+        am->cnt_gamemode1=1+qrand()%9;
+    }
+    else
+    {
+        am->cnt_gamemode1=10+qrand()%120;
+    }
+    int tmp2=qrand()%2;
+    if(tmp2)
+    {
+        am->cnt_gamemode2=1+qrand()%9;
+    }
+    else
+    {
+        am->cnt_gamemode2=10+qrand()%120;
+    }
+    int tmp3=qrand()%2;
+    if(tmp3)
+    {
+        am->cnt_gamemode3=1+qrand()%9;
+    }
+    else
+    {
+        am->cnt_gamemode3=10+qrand()%120;
+    }
+    int tmp4=qrand()%2;
+    if(tmp4)
+    {
+        am->cnt_win=qrand()%10;
+    }
+    else
+    {
+        am->cnt_win=10+qrand()%120;
+    }
+    if(am->cnt_win>am->cnt_gamemode1)
+    {
+        am->cnt_win=am->cnt_gamemode1;
+    }
     am->move(this->x()+80,this->y()+100);
     am->show();
+    am->achievementsupdate();
 }
 
 void MainWindow::on___button_5_clicked()
