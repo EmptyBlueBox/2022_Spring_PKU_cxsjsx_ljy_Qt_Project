@@ -18,21 +18,27 @@ SOURCES += main.cpp\
     pinball.cpp \
     bomb.cpp \
     shop.cpp \
-    nomoney.cpp
+    nomoney.cpp \
+    help.cpp \
+    achievements.cpp
 
 HEADERS  += mainwindow.h \
     board2.h \
     pinball.h \
     bomb.h \
     shop.h \
-    nomoney.h
+    nomoney.h \
+    help.h \
+    achievements.h
 
 FORMS    += mainwindow.ui \
     board2.ui \
     pinball.ui \
     bomb.ui \
     shop.ui \
-    nomoney.ui
+    nomoney.ui \
+    help.ui \
+    achievements.ui
 
 RESOURCES += \
     res.qrc

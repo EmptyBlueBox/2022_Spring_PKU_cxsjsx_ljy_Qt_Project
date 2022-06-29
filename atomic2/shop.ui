@@ -387,6 +387,9 @@
      <height>80</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-1-1.png);</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -414,6 +417,9 @@
      <width>80</width>
      <height>80</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-2-1.png);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -443,6 +449,9 @@
      <height>80</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-3-1.png);</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -470,6 +479,9 @@
      <width>80</width>
      <height>80</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-4-1.png);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -499,6 +511,9 @@
      <height>80</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-5-1.png);</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -526,6 +541,9 @@
      <width>80</width>
      <height>80</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-6-1.png);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -555,6 +573,9 @@
      <height>80</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-7-1.png);</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -582,6 +603,9 @@
      <width>80</width>
      <height>80</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-8-1.png);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -611,6 +635,9 @@
      <height>80</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-9-1.png);</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -638,6 +665,9 @@
      <width>80</width>
      <height>80</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-10.png);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -741,6 +771,25 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="pic2_2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>10</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/image/shop-2-1-2.png);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
    </property>
   </widget>
  </widget>

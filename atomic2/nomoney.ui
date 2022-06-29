@@ -10,6 +10,18 @@
     <height>250</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>250</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -18,8 +30,8 @@
     <rect>
      <x>70</x>
      <y>60</y>
-     <width>261</width>
-     <height>51</height>
+     <width>260</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
@@ -27,8 +39,11 @@
      <pointsize>24</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
    <property name="text">
-    <string>余额不足</string>
+    <string>余额不足!</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -37,10 +52,10 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>140</x>
      <y>190</y>
-     <width>121</width>
-     <height>31</height>
+     <width>120</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="font">
@@ -49,7 +64,7 @@
     </font>
    </property>
    <property name="text">
-    <string>点击以继续</string>
+    <string>确定</string>
    </property>
   </widget>
  </widget>

@@ -39,7 +39,7 @@ void Shop::on_buy1_clicked()
     {
         money -= pri[1];
         ava[1] = level[1];
-        ui->buy1->setDisabled(true);\
+        ui->buy1->setDisabled(true);
         ui->rest->setText(QString::number(money));
     }
 }
@@ -173,7 +173,7 @@ void Shop::on_buyrandom_clicked()
     else
     {
         money -= pri[10];
-        int tmp = qrand() % 9 + 1;
+        int tmp = qrand() % 8 + 1;
         ava[tmp] = level[tmp];
         ui->buyrandom->setDisabled(true);
         ui->rest->setText(QString::number(money));
